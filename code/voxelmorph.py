@@ -11,6 +11,12 @@ import nibabel as nib  # Added to work with NIfTI images
 from skimage.transform import resize
 import voxelmorph3d as vm3d
 import time
+from skimage import io
+from skimage.transform import resize
+from sklearn.model_selection import train_test_split
+from torch.autograd import Variable
+import torch.nn.functional as F
+
 use_gpu = torch.cuda.is_available()
 
 
@@ -35,14 +41,13 @@ class VoxelMorph():
 
     def check_dims(self, x):
         try:
-            if x.shape[1:] == self.dims[1:]:
+            if x.shape[1:] == self.dims:
                 return
             else:
                 raise TypeError
         except TypeError as e:
             print("Invalid Dimension Error. The supposed dimension is ",
-                self.dims, "But the dimension of the input is ", x.shape[1:])
-
+                  self.dims, "But the dimension of the input is ", x.shape[1:])
 
     def forward(self, x):
         self.check_dims(x)
@@ -97,8 +102,8 @@ class Dataset(data.Dataset):
         # Load data and get label
         fixed_image = nib.load(os.path.join(DATA_PATH, ID,"normalized","T1w_1mm_normalized.nii.gz"))
         moving_image = nib.load(os.path.join(DATA_PATH, ID,"registered", "T2w_registered.nii.gz"))
-        fixed_image = torch.Tensor(resize(fixed_image.get_fdata(), (1, 182, 218, 182)))  # Adjust the dimensions according to your needs
-        moving_image = torch.Tensor(resize(moving_image.get_fdata(), (1, 182, 218, 182)))  # Adjust the dimensions according to your needs
+        fixed_image = torch.Tensor(resize(fixed_image.get_fdata(), (182, 218, 182)))  # Adjust the dimensions according to your needs
+        moving_image = torch.Tensor(resize(moving_image.get_fdata(), (182, 218, 182)))  # Adjust the dimensions according to your needs  # Adjust the dimensions according to your needs
 
         return fixed_image, moving_image
 
