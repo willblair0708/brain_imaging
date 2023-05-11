@@ -19,7 +19,8 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'  # Adjust the GPU device index if neede
 tf.config.set_visible_devices(physical_devices[0], 'GPU')
 tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
-vol_shape = (192, 224, 192)
+# vol_shape = (192, 224, 192)
+vol_shape = (160, 176, 160)
 nb_features = [
     [16, 32, 32, 32],
     [32, 32, 32, 32, 32, 16, 16]
@@ -46,14 +47,16 @@ for i in range(1, 200):
     # Load T1w image
     img1 = nib.load(f"../data/output/{patient_number}/normalized/T1w_1mm_normalized.nii.gz")
     data1 = img1.get_fdata()
-    data1 = np.pad(data1, [(5, 5), (3, 3), (5, 5)], mode="constant")
+    data1 = np.pad(data1, [(7, 8), (1, 1), (7, 8)], mode="edge")
     t1w_images.append(data1)
     
     # Load T2w image
-    img2 = nib.load(f"../data/output/{patient_number}/registered/T2w_registered.nii.gz")
-    data2 = img2.get_fdata()
-    data2 = np.pad(data2, [(5, 5), (3, 3), (5, 5)], mode="constant")
-    t2w_images.append(data2)
+    # img2 = nib.load(f"../data/output/{patient_number}/registered/T2w_registered.nii.gz")
+    # data2 = img2.get_fdata()
+    # data2 = np.pad(data2, [(5, 5), (3, 3), (5, 5)], mode="constant")
+    # t2w_images.append(data2)
+
+    # TODO: load ADC and FA images here 
 
 
 # Stack images together
