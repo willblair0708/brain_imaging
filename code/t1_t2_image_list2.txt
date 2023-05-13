@@ -1,0 +1,8 @@
+../data/input/001/T1w_1mm.nii.gz
+../data/input/001/T2w_1mm.nii.gz
+../data/input/002/T1w_1mm.nii.gz
+../data/input/002/T2w_1mm.nii.gz
+../data/input/003/T1w_1mm.nii.gz
+../data/input/003/T2w_1mm.nii.gz
+../data/input/004/T1w_1mm.nii.gz
+../data/input/004/T2w_1mm.nii.gz
