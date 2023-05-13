@@ -17,7 +17,7 @@ The order of files that should be run on the test set:
 6. finalmodel_adc_hr.ipynb - GAN to synthesize ADC images; however, on the test set, the training loop does not need to be run as the model weights will be loaded from the saved files
 
 # Trained Models
-We created and trained our own generative adversial models, one for the synthesis of ADC images and one for the synthesis of FA images.
+We created and trained our own generative adversarial models, one for the synthesis of ADC images and one for the synthesis of FA images.
 
 The model weights are in the following files:
 For the FA model: t1_model_fa.pt, t2_model_fa.pt, generator_fa.pt, discriminator_fa.pt
