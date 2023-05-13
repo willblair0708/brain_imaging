@@ -24,14 +24,10 @@ def main():
     # Change the working directory to the "data" folder
     os.chdir('../data/output8')
 
-    # Get the list of patient folders
-    patient_folders = [folder for folder in os.listdir() if os.path.isdir(folder)]
+    # Limit to patient folders 'E01' to 'E10'
+    for i in range(1, 11):
+        patient_folder = f"E{i:02d}"  # Format the folder name with leading zeros
 
-    # Select patients E01 to E10
-    selected_patients = patient_folders[:10]  # Assuming patients E01 to E10 are the first 10 folders
-
-    # Resample images to the desired shape
-    for patient_folder in selected_patients:
         output_folder = os.path.abspath(patient_folder)
 
         # Create the output folder for the resampled images
