@@ -1,5 +1,7 @@
 # MRI Image Synthesis Project
 
+Find all non-corrupted files in Google Drive: https://drive.google.com/drive/u/0/folders/1ySDDfXsGiV2DQGDblMH0BK3bIGxrK1mt
+
 This project focuses on synthesizing Diffusion Tensor Imaging (DTI) related images, specifically Fractional Anisotropy (FA) and Apparent Diffusion Coefficient (ADC), using T1w and T2w structural images. The project is based on the use of Magnetic Resonance Imaging (MRI) data to study the brain's white matter structure.
 
 ## Abstract
