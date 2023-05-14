@@ -33,7 +33,7 @@ The project consists of the following steps:
 
 1. **Skull Stripping**
 
-This step focuses on removing the skull region from the MRI images. Tools like HD-BET or BET can be used for this purpose. It's important to ensure that the synthesized FA and ADC maps do not contain any skull regions.
+This step focuses on removing the skull region from the MRI images. HD-BET was used for this purpose. It's important to ensure that the synthesized FA and ADC maps do not contain any skull regions.
 
 2. **Registration**
 
