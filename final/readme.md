@@ -22,7 +22,7 @@ Here are the files included in this project:
 * `bspline.ipynb`: This notebook contains code for B-spline transformations.
 * `fa_syn.ipynb`: This notebook is for synthesizing FA images.
 * `adc_syn.ipynb`: This notebook is for synthesizing FA images.
-* `resample.py`: This is a Python script for resampling images.
+* `resample.py`: This is a Python script for resampling images to the correct resolution.
 
 ## Dataset
 
@@ -38,11 +38,11 @@ This step focuses on removing the skull region from the MRI images. HD-BET was u
 
 2. **Registration**
 
-In this step, all images are aligned with each other. The reference space is the T1w space. It is also important to align the other images (T2w, FA, and ADC) to this space. Please note that the provided FA and ADC maps have undergone the same geometric distortion.
+In this step, all images are aligned with each other. The reference space is the T1w space. It is also important to align the other images (T2w, FA, and ADC) to this space, which we did so using affine registration. Please note that the provided FA and ADC maps have undergone the same geometric distortion, thus, they underwent B-spline deformable registration.
 
 3. **Synthesis**
 
-The last step is the synthesis of the FA and ADC maps from the input T1w and T2w images. It is advisable to start with simpler models, such as linear regression, before moving on to more complex methods, such as deep learning-based image synthesis.
+The last step is the synthesis of the FA and ADC maps from the input T1w and T2w images. We did this by creating a generative adversarial model to synthesize the FA and ADC images. All the previous steps were done in the higher resolution, so a post-processing step for the FA and ADC images was used.
 
 ## Trained Models
 We created and trained our own generative adversarial models, one for the synthesis of ADC images and one for the synthesis of FA images.
