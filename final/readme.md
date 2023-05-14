@@ -20,9 +20,11 @@ Here are the files included in this project:
 * `normalize.ipynb`: This notebook contains code to normalize the MRI images.
 * `affine.ipynb`: This notebook contains methods for affine transformations.
 * `bspline.ipynb`: This notebook contains code for B-spline transformations.
-* `fa_syn.ipynb`: This notebook is for synthesizing FA images.
-* `adc_syn.ipynb`: This notebook is for synthesizing FA images.
+* `fa_syn.ipynb`: This notebook is for synthesizing FA images. For the test dataset, the models do not have to be trained.
+* `adc_syn.ipynb`: This notebook is for synthesizing FA images. For the test dataset, the models do not have to be trained.
 * `resample.py`: This is a Python script for resampling images to the correct resolution.
+
+The files are listed in the order they should be run on the test set.
 
 ## Dataset
 
