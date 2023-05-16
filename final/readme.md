@@ -1,5 +1,7 @@
 # MRI Image Synthesis Project
 
+Find all non-corrupted files in Google Drive: https://drive.google.com/drive/u/0/folders/1ySDDfXsGiV2DQGDblMH0BK3bIGxrK1mt
+
 This project focuses on synthesizing Diffusion Tensor Imaging (DTI) related images, specifically Fractional Anisotropy (FA) and Apparent Diffusion Coefficient (ADC), using T1w and T2w structural images. The project is based on the use of Magnetic Resonance Imaging (MRI) data to study the brain's white matter structure.
 
 ## Abstract
@@ -50,6 +52,10 @@ The last step is the synthesis of the FA and ADC maps from the input T1w and T2w
 We created and trained our own generative adversarial models, one for the synthesis of ADC images and one for the synthesis of FA images.
 
 The model weights are in the following files: For the FA model: t1_model_fa.pt, t2_model_fa.pt, generator_fa.pt, discriminator_fa.pt For the ADC model: t1_model_adc.pt, t2_model_adc.pt, generator_adc.pt, discriminator_adc.pt These model weight files will automatically be used in the files to generate images.
+
+Find updated image in google drive as well.
+
+All found in Google Drive: https://drive.google.com/drive/u/0/folders/172T7z1VOD7gAC5uRx7ARjXCyUzUhpN7E
 
 ## Contributions
 
